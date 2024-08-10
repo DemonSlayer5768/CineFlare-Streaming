@@ -1,0 +1,45 @@
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; /* Espacio entre los ítems de la cuadrícula */
+  padding: 16px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-image {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block;
+}
+
+.grid-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 16px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.grid-item:hover .grid-overlay {
+  opacity: 1;
+}
+
+.grid-title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.grid-description {
+  font-size: 0.9rem;
+  margin: 0;
+}
