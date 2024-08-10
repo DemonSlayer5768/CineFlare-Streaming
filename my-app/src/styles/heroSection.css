@@ -1,0 +1,26 @@
+.carousel-container {
+  /* padding-top: 1rem; */
+  /* background-color: antiquewhite; */
+  margin: 0;
+  width: 100%; /* O un ancho específico */
+  height: 650px; /* Ajusta la altura según sea necesario */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.7s ease;
+}
+
+.carousel-item {
+  min-width: 100%; /* Cada ítem ocupa el 100% del ancho del contenedor */
+  box-sizing: border-box;
+  height: 500px; /* Ajusta la altura de los ítems al contenedor */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}

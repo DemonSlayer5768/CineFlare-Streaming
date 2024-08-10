@@ -1,13 +1,15 @@
-import Header from '../Components/header';
+import Header from "../Components/header";
+import HeroSection from "../Components/heroSection";
 
 export default function Page() {
   return (
     <div>
       <Header />
+      <HeroSection />
       <main>
-        <h1 className="text-4xl font-bold">Bienvenido a Mi Página de Series</h1>
-        <p className="mt-4">Aquí puedes ver tus series favoritas.</p>
+        <h1>Para ti</h1>
+        {/* <ParaTi /> */}
       </main>
     </div>
-  )
+  );
 }

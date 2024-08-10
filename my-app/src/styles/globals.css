@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  
   height: 30000px;
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,9 +14,9 @@
   }
 }
 
-/* body {
+body {
   background-color: gray;
-} */
+}
 
 @layer utilities {
   .text-balance {
