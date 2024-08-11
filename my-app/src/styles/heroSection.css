@@ -1,26 +1,166 @@
 .carousel-container {
-  /* padding-top: 1rem; */
-  /* background-color: antiquewhite; */
   margin: 0;
-  width: 100%; /* O un ancho específico */
-  height: 650px; /* Ajusta la altura según sea necesario */
+  width: 100%;
+  height: 600px;
   overflow: hidden;
+  position: relative;
 }
 
 .carousel {
-  display: flex;
-  transition: transform 0.7s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-item {
-  min-width: 100%; /* Cada ítem ocupa el 100% del ancho del contenedor */
-  box-sizing: border-box;
-  height: 500px; /* Ajusta la altura de los ítems al contenedor */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; /* Esconde todos los ítems por defecto */
+}
+
+.carousel-item.active {
+  display: block; /* Solo muestra el ítem activo */
+}
+
+.carousel-item {
+  position: relative;
 }
 
 .carousel-item img {
+  opacity: 5;
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+
+/* Sombra en la parte superior del 15% de la altura */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%; /* 15% de la altura de la imagen */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1; /* Asegúrate de que esté sobre la imagen */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+/* Título y descripción por encima de la sombra */
+.carousel-title,
+.carousel-description {
+  position: absolute;
+  z-index: 2; /* Más alto que la sombra */
+}
+
+.carousel-title {
+  position: absolute;
+  bottom: 450px;
+  font-style: none;
+  white-space: nowrap;
+  font-size: 5rem;
+  padding-left: 35px;
+  font-weight: bold;
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta cualquier contenido que exceda el ancho del contenedor */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+.carousel-description {
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  bottom: 250px;
+  font-style: none;
+  padding-left: 35px;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  width: 800px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: center;
+  /* white-space: pre-wrap; */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent; /* Fondo transparente */
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7; /* Transparencia del botón */
+  transition: opacity 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.carousel-button:hover {
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+
+.btn-primary {
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta cualquier contenido que exceda el ancho del contenedor */
+  background-color: gray;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
   display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #efefef; /* Cambio de color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.btn-primary:active {
+  background-color: gray; /* Color de fondo al hacer clic */
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
 }

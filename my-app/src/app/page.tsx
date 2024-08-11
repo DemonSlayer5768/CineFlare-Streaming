@@ -1,5 +1,6 @@
 import Header from "../Components/header";
 import HeroSection from "../Components/heroSection";
+import React from "react";
 import ContentGrid from "../Components/contentGrid";
 
 export default function Page() {

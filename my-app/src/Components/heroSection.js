@@ -9,22 +9,35 @@ const HeroSection = () => {
     {
       src: "../imgs_Carousel/Baki.jpg",
       title: "Baki",
-      description: "Peleas",
+      description: `Sigue la historia de Baki Hanma, 
+         un joven luchador que se entrena con intensidad para superar a su padre,
+         el luchador más fuerte del mundo.
+         La serie se centra en brutales combates de artes marciales, 
+         con personajes extremadamente poderosos y técnicas sorprendentes.`,
     },
     {
       src: "../imgs_Carousel/dragonBallS.jpg",
       title: "DragonBall Z",
-      description: "Peleas",
+      description: `Sigue la vida de Goku, un guerrero saiyajin, 
+      desde su infancia hasta la edad adulta. 
+      La serie combina acción, artes marciales,
+      y la búsqueda de poderosos enemigos y artefactos como las Esferas del Dragón,
+      que pueden conceder deseos. La serie también explora temas de amistad, familia y superación personal.`,
     },
     {
       src: "../imgs_Carousel/One_piece_Red.jpg",
       title: "One Piece",
-      description: "PIRATA",
+      description: `Narra las aventuras de Monkey D. Luffy
+        y su tripulación de piratas mientras buscan el legendario tesoro conocido como "One Piece".
+        Luffy sueña con convertirse en el Rey de los Piratas, 
+        y en su viaje se enfrentan a desafíos, enemigos y descubren misterios del mundo.`,
     },
     {
       src: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
-      description: "Ninja",
+      description: `Narra la historia de Naruto Uzumaki,
+        un joven ninja que sueña con convertirse en el líder de su aldea, el Hokage, 
+        mientras lucha por ser aceptado y reconocido en un mundo lleno de desafíos y técnicas ninja.`,
     },
     // Agrega más elementos según sea necesario
   ];
@@ -37,23 +50,44 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [items.length]);
 
+  const prevItem = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? items.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextItem = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+  };
+
   return (
     <div className="carousel-container">
-      <div
-        className="carousel"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+      <button className="carousel-button prev-button" onClick={prevItem}>
+        &#10094; {/* Símbolo de flecha hacia la izquierda */}
+      </button>
+      <div className="carousel">
         {items.map((item, index) => (
-          <div key={index} className="carousel-item">
+          <div
+            key={index}
+            className={`carousel-item ${
+              index === currentIndex ? "active" : ""
+            }`}
+            style={{
+              display: index === currentIndex ? "block" : "none",
+            }}
+          >
             <img src={item.src} alt={`Slide ${index}`} />
             <div className="carousel-caption">
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <button className="btn-primary">Ir a la película</button>
+              <h2 className="carousel-title">{item.title}</h2>
+              <p className="carousel-description">{item.description}</p>
+              <button className="btn-primary">Empezar a Ver</button>
             </div>
           </div>
         ))}
       </div>
+      <button className="carousel-button next-button" onClick={nextItem}>
+        &#10095; {/* Símbolo de flecha hacia la derecha */}
+      </button>
     </div>
   );
 };
