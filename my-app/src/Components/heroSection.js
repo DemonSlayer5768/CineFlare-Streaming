@@ -22,7 +22,7 @@ const HeroSection = () => {
       desde su infancia hasta la edad adulta. 
       La serie combina acción, artes marciales,
       y la búsqueda de poderosos enemigos y artefactos como las Esferas del Dragón,
-      que pueden conceder deseos. La serie también explora temas de amistad, familia y superación personal.`,
+      que pueden conceder deseos.`,
     },
     {
       src: "../imgs_Carousel/One_piece_Red.jpg",

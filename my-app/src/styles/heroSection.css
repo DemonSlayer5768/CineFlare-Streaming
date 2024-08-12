@@ -68,7 +68,7 @@
   font-style: none;
   white-space: nowrap;
   font-size: 5rem;
-  padding-left: 35px;
+  padding-left: 50px;
   font-weight: bold;
   white-space: nowrap; /* Evita el salto de línea */
   overflow: hidden; /* Oculta cualquier contenido que exceda el ancho del contenedor */
@@ -80,9 +80,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   position: absolute;
-  bottom: 250px;
+  bottom: 270px;
   font-style: none;
-  padding-left: 35px;
+  padding-left: 50px;
   gap: 1rem;
   font-size: 1.5rem;
   margin-top: 10px;
