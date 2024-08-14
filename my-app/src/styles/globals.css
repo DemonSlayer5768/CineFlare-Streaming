@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 :root {
-  height: 30000px;
+  --main-bg-color: #ffffff;
+  --main-text-color: #000000;
+  /* --main-text-color: red; */
 }
 
 @media (prefers-color-scheme: dark) {
