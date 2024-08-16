@@ -6,16 +6,19 @@ import ContNew from "../Components/NuevoContent";
 import ContSeries from "../Components/contentGridSeries";
 import ContMovies from "../Components/contentGridMovies";
 import ContAnime from "../Components/contentGidAnime";
+import Home from "../layouts/home";
 // import ThemeToggle from "../components/ThemeToggle";
 // import "../styles/page.css";
-import Login from "../layouts/login";
+// npm install react react-dom
+
+import Login from "../pages/login";
 import "../styles/globals.css";
 
 export default function Page() {
   return (
     <div>
       <main>
-        <Login />
+        <Home />
       </main>
     </div>
 
