@@ -9,8 +9,8 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    console.log("Submitting login with:", { username, password });
+    console.log("Submit button clicked"); // Confirmar que la función se llama
+    console.log("datos:", { username, password });
 
     try {
       const response = await fetch("/api/login", {
@@ -45,7 +45,10 @@ const Login = () => {
             id="username"
             name="username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              console.log("Username updated:", e.target.value);
+            }}
             required
           />
         </div>
@@ -56,7 +59,10 @@ const Login = () => {
             id="password"
             name="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              console.log("Password updated:", e.target.value);
+            }}
             required
           />
         </div>
