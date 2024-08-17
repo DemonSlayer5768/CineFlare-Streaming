@@ -1,5 +1,5 @@
 const mysql = require("mysql2");
-
+//db.js: Configura y exporta la conexión a la base de datos.
 const connection = mysql.createConnection({
   //   host: "localhost",
   host: "127.0.0.1",
