@@ -1,25 +1,37 @@
 header {
   width: 100%;
   z-index: 1;
-
-  /* background-color: black; */
+  inset: 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+  background: rgba(0, 0, 0, 0.5);
   padding: 1rem;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* z-index: 10;
-  position: fixed; */
+  z-index: 3;
+  position: fixed;
 }
 
-.nav_center,
 .nav_right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav_center ul,
+.nav_center ul {
+  position: absolute;
+  left: 35%;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 3rem;
+  /* background-color: antiquewhite; */
+}
+
 .nav_right ul {
   display: flex;
   list-style-type: none;

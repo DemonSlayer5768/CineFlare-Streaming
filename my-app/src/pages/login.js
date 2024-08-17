@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import "../styles/login.css";
+import "../styles/login.css"; // Asegúrate de tener estilos si es necesario
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -9,8 +9,6 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Submit button clicked"); // Confirmar que la función se llama
-    console.log("datos:", { username, password });
 
     try {
       const response = await fetch("/api/login", {
@@ -22,10 +20,16 @@ const Login = () => {
       });
 
       const result = await response.json();
+      console.log(result); // Depuración para ver el contenido de result
 
       if (response.ok) {
         console.log("Login successful", result);
-        router.push("/inicio");
+
+        // Guarda el token en localStorage si es necesario
+        // localStorage.setItem("authToken", result.token);
+
+        // Redirige a la página de inicio
+        router.push("/Inicio");
       } else {
         console.error("Login failed", result.message);
       }
@@ -43,12 +47,8 @@ const Login = () => {
           <input
             type="text"
             id="username"
-            name="username"
             value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-              console.log("Username updated:", e.target.value);
-            }}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </div>
@@ -57,12 +57,8 @@ const Login = () => {
           <input
             type="password"
             id="password"
-            name="password"
             value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              console.log("Password updated:", e.target.value);
-            }}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>

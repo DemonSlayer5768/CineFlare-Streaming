@@ -50,8 +50,8 @@
 
 .carousel-caption {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 10px;
+  left: 30px;
   color: white;
 }
 
@@ -63,28 +63,35 @@
 }
 
 .carousel-title {
-  position: absolute;
-  bottom: 450px;
-  font-style: none;
-  white-space: nowrap;
-  font-size: 5rem;
-  padding-left: 50px;
-  font-weight: bold;
-  white-space: nowrap; /* Evita el salto de línea */
-  overflow: hidden; /* Oculta cualquier contenido que exceda el ancho del contenedor */
-  text-overflow: ellipsis; /* Añade puntos suspensivos (...) si el texto es demasiado largo */
-}
-
-.carousel-description {
-  color: rgb(255, 255, 255);
+  color: #fff;
+  filter: brightness(50);
   overflow: hidden;
   text-overflow: ellipsis;
   position: absolute;
-  bottom: 270px;
+  bottom: 420px;
   font-style: none;
   padding-left: 50px;
   gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 5rem;
+  margin-top: 10px;
+  width: 800px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: center;
+  white-space: pre-wrap;
+}
+
+.carousel-description {
+  color: #fff;
+  filter: brightness(50);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  bottom: 200px;
+  font-style: none;
+  padding-left: 50px;
+  gap: 1rem;
+  font-size: 1.6rem;
   margin-top: 10px;
   width: 800px;
   font-weight: bold;
@@ -116,7 +123,7 @@
 .btn-primary {
   white-space: nowrap; /* Evita el salto de línea */
   overflow: hidden; /* Oculta cualquier contenido que exceda el ancho del contenedor */
-  background-color: gray;
+  background-color: #0a0a23;
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -127,6 +134,7 @@
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
 }
 
 .btn-grad:hover {

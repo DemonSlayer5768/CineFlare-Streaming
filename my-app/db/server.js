@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
@@ -12,9 +13,6 @@ app.use(express.json()); // Analiza los cuerpos JSON
 // Ruta para iniciar sesión
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
-  const user = results[0];
-
-  console.log(`recibe del login: ${username}, password: ${password}`);
 
   db.query(
     "SELECT username, email, password FROM usuarios WHERE username = ? OR email = ?",
@@ -29,7 +27,7 @@ app.post("/api/login", (req, res) => {
         return res.status(401).json({ message: "Usuario no encontrado" });
       }
 
-      console.log(`Stored hash password: ${user.password}`); // Depura el hash almacenado
+      const user = results[0];
 
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) {
@@ -40,10 +38,8 @@ app.post("/api/login", (req, res) => {
         }
 
         if (isMatch) {
-          console.log("Password match successful");
           res.status(200).json({ message: "Login exitoso", user });
         } else {
-          console.log("Password match failed");
           res.status(401).json({ message: "Contraseña incorrecta" });
         }
       });
@@ -62,8 +58,6 @@ app.post("/api/register", (req, res) => {
         .status(500)
         .json({ message: "Error al encriptar la contraseña" });
     }
-
-    console.log(`Hashed password: ${hashedPassword}`); // Depura el hash generado
 
     db.query(
       "INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)",

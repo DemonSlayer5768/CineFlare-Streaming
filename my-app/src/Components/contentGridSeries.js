@@ -1,42 +1,51 @@
 "use client";
-
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { useRouter } from "next/router";
 
 const ContSeries = () => {
+  const router = useRouter(); // Usar router para redirección
   const items = [
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/dragonBallS.jpg",
       title: "DragonBall Z",
       description: "episodios",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/One_Piece_Red.jpg",
       title: "One Piece",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/Baki.jpg",
       title: "Baki",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/Baki.jpg",
       title: "Baki",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/Baki.jpg",
       title: "Baki",
+      route: "/naruto", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
+      route: "/naruto", // Ruta a la que redirigir
     },
     // Agrega más items aquí
   ];
@@ -56,6 +65,10 @@ const ContSeries = () => {
     }
   };
 
+  const handleRedirect = (route) => {
+    router.push(route); // Redirigir a la ruta especificada
+  };
+
   const visibleItems = items.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
@@ -64,7 +77,8 @@ const ContSeries = () => {
         {visibleItems.map((item, index) => (
           <div
             key={index}
-            className="bg-none rounded-lg shadow-lg overflow-hidden"
+            onClick={() => handleRedirect(item.route)} // Redirigir al hacer clic
+            className="bg-none rounded-lg shadow-lg overflow-hidden cursor-pointer relative"
           >
             <img
               src={item.image}
