@@ -1,30 +1,72 @@
-.login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f9f9f9;
+html {
+  background-image: url("/../imgs_Home/fondoLogin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  margin-bottom: 15px;
-}
-
-.input-container label {
+.login-form {
+  /* background-color: #ccc; */
   display: block;
-  margin-bottom: 5px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.login-container h5 {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
-.input-container input {
+.container {
   width: 100%;
-  padding: 8px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container h3 {
+  font-size: 100px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  /* background-color: #007bff; */
+}
+.container p {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-style: none;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  /* background-color: #007bff; */
+}
+
+.input-container {
+  margin-bottom: 40px;
+  display: block;
+  justify-content: center;
+}
+
+.input-container label {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: bold;
+  opacity: 1;
+  z-index: 1;
+}
+
+.input-container input {
+  width: 90%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -32,13 +74,87 @@
 button[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: red;
+  margin-bottom: 5px;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: crimson;
+}
+
+/* Estilos del Modal error */
+.error-container {
+  background-color: #ff4c4c26;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; /* Cambiado a blanco para mejor visibilidad */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.show-error .error-container {
+  opacity: 1; /* Mantiene la opacidad cuando se muestra */
+}
+
+.error-container p {
+  margin: 0;
+  gap: 1rem;
+  color: #ff6d64;
+  font-size: 15px; /* Ajusta el tamaño si es necesario */
+  font-weight: bold; /* Asegura que el texto sea visible */
+}
+
+/* Ajuste del login-container */
+.login-container {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  /* opacity: 0.9; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Cambiado a flex-start para que el contenido comience desde arriba */
+  align-items: center;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: height 0.3s ease; /* Transición para el ajuste de altura */
+}
+
+/* Overlay opaco */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Estilos del ícono de cargando */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -10,6 +10,7 @@ import ContSeries from "../Components/contentGridSeries";
 import ContMovies from "../Components/contentGridMovies";
 import ContAnime from "../Components/contentGidAnime";
 import "../styles/globals.css";
+import "../styles/inicio.css";
 
 const Inicio = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

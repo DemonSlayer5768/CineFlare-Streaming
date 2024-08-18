@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import { MdErrorOutline } from "react-icons/md";
 import { useRouter } from "next/router";
 import "../styles/login.css"; // Asegúrate de tener estilos si es necesario
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showModal, setShowModal] = useState(false); // Nuevo estado para manejar la visibilidad del modal
+  const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/login", {
@@ -20,50 +25,64 @@ const Login = () => {
       });
 
       const result = await response.json();
-      console.log(result); // Depuración para ver el contenido de result
+      console.log(result);
 
       if (response.ok) {
         console.log("Login successful", result);
-
-        // Guarda el token en localStorage si es necesario
-        // localStorage.setItem("authToken", result.token);
-
-        // Redirige a la página de inicio
         router.push("/Inicio");
       } else {
         console.error("Login failed", result.message);
+        setShowModal(true);
       }
     } catch (error) {
       console.error("Error:", error);
+      setShowModal(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    <div className="container">
+      {isLoading && (
+        <div className="overlay">
+          <div className="spinner"></div>
         </div>
-        <div className="input-container">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      )}
+      <h3>Comenzar</h3>
+      <div className="login-container">
+        <h5>Iniciar Sesión</h5>
+        {showModal && (
+          <div className="error-container">
+            <p>
+              <MdErrorOutline /> El usuario o la contraseña son incorrectos.
+            </p>
+          </div>
+        )}
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor="username">Usuario</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Ingresar</button>
+        </form>
+      </div>
     </div>
   );
 };

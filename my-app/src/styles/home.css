@@ -1,11 +1,7 @@
-/* .container {
-  height: 90000px;
-} */
-
 header {
   width: 100%;
 
-  background-color: none;
+  background-color: black;
   padding: 1rem;
   height: 80px;
   display: flex;
@@ -99,16 +95,32 @@ h4 {
   color: white;
 }
 
+.title_price {
+  color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 3rem;
+}
+
 .pantalla {
-  width: 1000px;
+  width: 900px;
   height: auto;
   position: absolute;
   top: 400px;
-  left: 25%;
-  right: 30%;
+  left: 21%;
+  right: 20%;
 }
 
 footer {
   margin-bottom: 100px;
   z-index: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
