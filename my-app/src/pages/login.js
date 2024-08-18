@@ -6,7 +6,7 @@ import "../styles/login.css"; // Asegúrate de tener estilos si es necesario
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showModal, setShowModal] = useState(false); // Nuevo estado para manejar la visibilidad del modal
+  const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();

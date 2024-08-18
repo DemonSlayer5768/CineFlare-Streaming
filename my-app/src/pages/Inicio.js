@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "../Components/header";
 import HeroSection from "../Components/heroSection";
-import ContentGrid from "../Components/contentGridContinue";
+import ContContinue from "../Components/contentGridContinue";
 import ContNew from "../Components/NuevoContent";
 import ContSeries from "../Components/contentGridSeries";
 import ContMovies from "../Components/contentGridMovies";
@@ -36,7 +36,7 @@ const Inicio = () => {
       <HeroSection />
       <main>
         <h1>Seguir Viendo</h1>
-        <ContentGrid />
+        <ContContinue />
         <h2>Nuevo Contenido</h2>
         <ContNew />
         <h2>Series</h2>

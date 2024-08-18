@@ -12,9 +12,8 @@ const ContentGrid = () => {
       route: "/naruto", // Ruta a la que redirigir
     },
     {
-      image: "../imgs_Carousel/dragonBallS.jpg",
+      image: "../imgs_Carousel/Baki.jpg",
       title: "DragonBall Z",
-      description: "episodios",
       route: "/naruto", // Ruta a la que redirigir
     },
     {
@@ -83,7 +82,7 @@ const ContentGrid = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-30 w-30 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg text-white font-semibold">{item.title}</h3>
@@ -114,5 +113,4 @@ const ContentGrid = () => {
     </div>
   );
 };
-
 export default ContentGrid;

@@ -44,7 +44,9 @@ const Price = () => {
           <div className="p-4">
             <h5 className="text-lg font-bold ">{item.title}</h5>
             <p className="text-muted-foreground">{item.price}</p>
-            <button className="mt-4 w-full bg-none">Comprar Ahora</button>
+            <button className="mt-4 w-full bg-none bg-white text-black text-lg">
+              Comprar Ahora
+            </button>
           </div>
         </div>
       ))}
