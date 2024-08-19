@@ -26,7 +26,7 @@ const ContentGrid = () => {
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
-      route: "Anime/5f06b32b-fd85-42db-8c80-4d0b519930dd", // Ruta a la que redirigir
+      route: "/PageListContent", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/Baki.jpg",
