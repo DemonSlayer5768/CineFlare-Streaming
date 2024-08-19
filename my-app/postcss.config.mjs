@@ -1,11 +1,13 @@
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+import postcssImport from "postcss-import";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
 /** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: [
-    tailwindcss(),
-    autoprefixer(),
+    postcssImport(), // Asegúrate de que postcss-import esté correctamente importado
+    tailwindcss(), // Inicializa Tailwind CSS
+    autoprefixer(), // Añade prefijos de navegador automáticamente
   ],
 };
 

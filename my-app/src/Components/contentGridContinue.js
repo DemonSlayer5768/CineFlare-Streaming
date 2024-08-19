@@ -9,7 +9,7 @@ const ContentGrid = () => {
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
-      route: "/naruto", // Ruta a la que redirigir
+      route: "/anime/123e4567-e89b-12d3-a456-426614174000",
     },
     {
       image: "../imgs_Carousel/Baki.jpg",
@@ -65,7 +65,7 @@ const ContentGrid = () => {
   };
 
   const handleRedirect = (route) => {
-    router.push(route); // Redirigir a la ruta especificada
+    router.push(route);
   };
 
   const visibleItems = items.slice(currentIndex, currentIndex + itemsPerPage);
@@ -76,7 +76,7 @@ const ContentGrid = () => {
         {visibleItems.map((item, index) => (
           <div
             key={index}
-            onClick={() => handleRedirect(item.route)} // Redirigir al hacer clic
+            onClick={() => handleRedirect(item.route)}
             className="bg-none rounded-lg shadow-lg overflow-hidden cursor-pointer relative"
           >
             <img
@@ -91,7 +91,6 @@ const ContentGrid = () => {
         ))}
       </div>
 
-      {/* Botón de izquierda */}
       {currentIndex > 0 && (
         <button
           onClick={handlePrevious}
@@ -101,7 +100,6 @@ const ContentGrid = () => {
         </button>
       )}
 
-      {/* Botón de derecha */}
       {currentIndex + itemsPerPage < items.length && (
         <button
           onClick={handleNext}

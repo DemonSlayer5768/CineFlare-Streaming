@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/styles/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/anime/**/*.{js,ts,jsx,tsx,mdx}", // Rutas específicas en anime
   ],
   theme: {
     extend: {},

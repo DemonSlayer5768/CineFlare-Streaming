@@ -24,7 +24,8 @@ const Home = () => {
         <img className="fondo" alt="fondo" src="../imgs_Home/fondo.jpg" />
         <h3>CineFlare</h3>
         <h4> !MUCHO MAS QUE VER !</h4>
-        {/* <img className="pantalla" src="../imgs_Home/pantalla.jpg"></img> */}
+
+        {/* <img className="pantalla " src="../imgs_Home/home_movies.jpg"></img> */}
       </div>
       <div className="p-10">
         <h5 className="title_price">PRECIOS </h5>
