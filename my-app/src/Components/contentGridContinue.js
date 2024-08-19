@@ -3,13 +3,30 @@ import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useRouter } from "next/router";
 
+// const router = useRouter(); // Usar router para redirección
+// const [items, setItems] = useState([]);
+
+// useEffect(() => {
+//   const fetchItems = async () => {
+//     try {
+//       // Asumiendo que tienes un endpoint para obtener los ítems
+//       const response = await axios.get("/api/ID_Categorias");
+//       setItems(response.data);
+//     } catch (error) {
+//       console.error("Error fetching items:", error);
+//     }
+//   };
+
+//   fetchItems();
+// }, []);
+
 const ContentGrid = () => {
   const router = useRouter(); // Usar router para redirección
   const items = [
     {
       image: "../imgs_Carousel/naruto.jpg",
       title: "Naruto",
-      route: "/anime/123e4567-e89b-12d3-a456-426614174000",
+      route: "Anime/5f06b32b-fd85-42db-8c80-4d0b519930dd", // Ruta a la que redirigir
     },
     {
       image: "../imgs_Carousel/Baki.jpg",

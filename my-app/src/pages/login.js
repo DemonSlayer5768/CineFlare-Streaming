@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container_login">
       {isLoading && (
         <div className="overlay">
           <div className="spinner"></div>
@@ -68,6 +68,7 @@ const Login = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+              autoComplete="username" // Atributo de autocompletado para el campo de nombre de usuario
             />
           </div>
           <div className="input-container">
@@ -78,6 +79,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              autoComplete="current-password" // Atributo de autocompletado para el campo de contraseña
             />
           </div>
           <button type="submit">Ingresar</button>

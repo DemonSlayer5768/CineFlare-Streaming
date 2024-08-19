@@ -10,7 +10,7 @@ body,
   padding: 0;
 }
 
-.container {
+.container_login {
   background-image: url("/imgs_Home/fondoLogin.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +25,7 @@ body,
 }
 
 /* Estilo para el h3 en el contenedor principal */
-.container h3 {
+.container_login h3 {
   font-size: 100px;
   font-family: sans-serif;
   font-weight: bold;

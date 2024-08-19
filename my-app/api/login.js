@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-const pool = require("./db"); // Importa el pool de la base de datos
+const pool = require("../db/db"); // Importa el pool de la base de datos
 
 const app = express();
 const saltRounds = 10; // Número de rondas para bcrypt
