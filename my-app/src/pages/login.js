@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdErrorOutline } from "react-icons/md";
 import { useRouter } from "next/router";
-import "../styles/login.css"; // Asegúrate de tener estilos si es necesario
+import "../styles/login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");

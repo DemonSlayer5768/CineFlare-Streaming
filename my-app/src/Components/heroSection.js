@@ -7,7 +7,7 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = [
     {
-      src: "../imgs_Carousel/Baki.jpg",
+      src: "/imgs_Carousel/Baki.jpg",
       title: "Baki",
       description: `Sigue la historia de Baki Hanma, 
          un joven luchador que se entrena con intensidad para superar a su padre,
@@ -16,7 +16,7 @@ const HeroSection = () => {
          con personajes extremadamente poderosos y técnicas sorprendentes.`,
     },
     {
-      src: "../imgs_Carousel/dragonBallS.jpg",
+      src: "/imgs_Carousel/dragonBallS.jpg",
       title: "DragonBall Z",
       description: `Sigue la vida de Goku, un guerrero saiyajin, 
       desde su infancia hasta la edad adulta. 
@@ -25,7 +25,7 @@ const HeroSection = () => {
       que pueden conceder deseos.`,
     },
     {
-      src: "../imgs_Carousel/One_piece_Red.jpg",
+      src: "/imgs_Carousel/One_piece_Red.jpg",
       title: "One Piece",
       description: `Narra las aventuras de Monkey D. Luffy
         y su tripulación de piratas mientras buscan el legendario tesoro conocido como "One Piece".
@@ -33,7 +33,7 @@ const HeroSection = () => {
         y en su viaje se enfrentan a desafíos, enemigos y descubren misterios del mundo.`,
     },
     {
-      src: "../imgs_Carousel/naruto.jpg",
+      src: "/imgs_Carousel/naruto.jpg",
       title: "Naruto",
       description: `Narra la historia de Naruto Uzumaki,
         un joven ninja que sueña con convertirse en el líder de su aldea, el Hokage, 
@@ -73,10 +73,11 @@ const HeroSection = () => {
               index === currentIndex ? "active" : ""
             }`}
             style={{
-              display: index === currentIndex ? "block" : "none",
+              opacity: index === currentIndex ? 1 : 0,
+              transition: "opacity 0.5s ease",
             }}
           >
-            <img src={item.src} alt={`Slide ${index}`} />
+            <img src={item.src} alt={`Slide ${index}`} loading="lazy" />
             <div className="carousel-caption">
               <h2 className="carousel-title">{item.title}</h2>
               <p className="carousel-description">{item.description}</p>

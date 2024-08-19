@@ -1,13 +1,15 @@
 /* Estilo global para html y body */
+/* Asegúrate de que el contenedor __next ocupe toda la altura */
+
 html,
-body {
-  margin: 0;
-  padding: 0;
+body,
+#__next {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* Contenedor principal */
 .container {
   background-image: url("/imgs_Home/fondoLogin.jpg");
   background-repeat: no-repeat;
@@ -122,6 +124,7 @@ button[type="submit"]:hover {
   border-radius: 5px;
   color: white;
   margin-bottom: 20px;
+  font-family: sans-serif;
   transition: opacity 0.3s ease-in-out;
 }
 
