@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"node ID_Categoria.js\" \"node api/login.js\" \"next dev\"",
+    "dev": "concurrently  \"node api/server.js\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   port: "3306",
   user: "root",
   password: "",
-  database: "MyPageWeb",
+  database: "mypageweb",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
