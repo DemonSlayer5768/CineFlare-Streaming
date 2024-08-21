@@ -10,6 +10,8 @@ const animesRouter = require("./animes"); // Asegúrate de que esta ruta es corr
 // Middleware
 app.use(cors());
 app.use(express.json());
+// Configurar la ruta para servir archivos estáticos
+app.use("/videos", express.static("D:/Videos/Anime/Peleas/Baki"));
 
 // Montar las rutas
 app.use("/api", episodesRouter);

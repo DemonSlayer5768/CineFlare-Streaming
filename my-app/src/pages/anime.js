@@ -27,21 +27,18 @@ const Anime = () => {
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-8 md:mb-10 lg:mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Explore Our Anime Collection
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
+              Anime
             </h2>
-            <p className="mt-3 text-lg text-muted-foreground sm:mt-4 md:text-xl">
-              Discover a wide range of anime series.
-            </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-10 ">
             {animes.map((anime) => (
               <div
                 key={anime.UUID}
-                className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl min-h-[350px] min-w-[450px]"
               >
                 <Link
-                  href={`/anime/${anime.UUID}`} // Verifica que anime.UUID es el identificador correcto
+                  href={`/anime/${anime.UUID}`}
                   className="absolute inset-0 z-10"
                   prefetch={false}
                 >
@@ -56,7 +53,9 @@ const Anime = () => {
                   style={{ aspectRatio: "600/400", objectFit: "cover" }}
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold">{anime.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">
+                    {anime.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     {anime.description}
                   </p>

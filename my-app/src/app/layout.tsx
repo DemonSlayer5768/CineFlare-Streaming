@@ -1,6 +1,9 @@
+// app/layouts.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
+import "../styles/globals.css"; // Estilos globales
+import "slick-carousel/slick/slick.css"; // Estilos de slick-carousel
+import "slick-carousel/slick/slick-theme.css"; // Estilos del tema de slick-carousel
 
 const inter = Inter({ subsets: ["latin"] });
 

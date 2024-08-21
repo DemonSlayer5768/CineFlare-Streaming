@@ -27,11 +27,9 @@ router.get("/episodes/season/:season", async (req, res) => {
       `Error al obtener los episodios de la temporada ${season}:`,
       err
     );
-    res
-      .status(500)
-      .json({
-        error: `Error al obtener los episodios de la temporada ${season}`,
-      });
+    res.status(500).json({
+      error: `Error al obtener los episodios de la temporada ${season}`,
+    });
   }
 });
 
